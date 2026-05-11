@@ -38,7 +38,10 @@ class AppAdapter(
     }
 
     fun setItemHeight(height: Int) {
-        itemHeight = height
+        if (this.itemHeight != height) {
+            this.itemHeight = height
+            notifyDataSetChanged()
+        }
     }
 
     override fun getItemViewType(position: Int): Int {

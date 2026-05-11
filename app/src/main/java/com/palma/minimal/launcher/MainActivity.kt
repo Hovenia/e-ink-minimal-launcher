@@ -7,6 +7,7 @@ import android.content.IntentFilter
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
+import android.content.res.Configuration
 import android.graphics.Typeface
 import android.net.Uri
 import android.os.BatteryManager
@@ -89,6 +90,17 @@ class MainActivity : AppCompatActivity() {
         loadApps()
         updateHeader()
         setupListeners()
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        // Wait for layout to finish updating before recalculating height
+        recyclerViewApps.post {
+            if (!isShowingAllApps) {
+                calculateItemHeight()
+                appAdapter.notifyDataSetChanged()
+            }
+        }
     }
 
     private fun initViews() {
@@ -215,7 +227,7 @@ class MainActivity : AppCompatActivity() {
             }
             
             if (dist == 0) {
-                tv.setTextColor(0xFF000000.toInt())
+                tv.setTextColor(0xFFFFFFFF.toInt())
                 tv.textSize = 32f
             } else {
                 tv.setTextColor(0xFF888888.toInt())
