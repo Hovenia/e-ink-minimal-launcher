@@ -284,10 +284,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun calculateItemHeight() {
         if (!isShowingAllApps) {
-            val totalHeight = recyclerViewApps.height
-            if (totalHeight <= 0) return
-            val rows = 4
-            appAdapter.setItemHeight(totalHeight / rows)
+            recyclerViewApps.post {
+                val totalHeight = recyclerViewApps.height
+                if (totalHeight <= 0) return@post
+                val rows = 4
+                appAdapter.setItemHeight(totalHeight / rows)
+            }
         }
     }
 
@@ -378,19 +380,37 @@ class MainActivity : AppCompatActivity() {
         tvAllApps.text = if (isShowingAllApps) textAllApps else textFavorites
     }
 
+    private var batteryReceiver: BroadcastReceiver? = null
+
+    override fun onDestroy() {
+        super.onDestroy()
+        batteryReceiver?.let { unregisterReceiver(it) }
+    }
+
     private fun setupListeners() {
         tvAllApps.setOnClickListener {
             isShowingAllApps = !isShowingAllApps
             updateDisplayList()
+            if (!isShowingAllApps) {
+                calculateItemHeight()
+            }
         }
         ivSettings.setOnClickListener { showSettingsMenu() }
-        btnRefreshScreen.setOnClickListener { window.decorView.invalidate() }
-        val filter = IntentFilter()
-        filter.addAction(Intent.ACTION_TIME_TICK)
-        filter.addAction(Intent.ACTION_BATTERY_CHANGED)
-        registerReceiver(object : BroadcastReceiver() {
+        btnRefreshScreen.setOnClickListener { 
+            // Onyx/Boox GC refresh broadcast
+            sendBroadcast(Intent("android.intent.action.ONYX_GC_ANYWAY"))
+            window.decorView.invalidate() 
+        }
+        val filter = IntentFilter().apply {
+            addAction(Intent.ACTION_TIME_TICK)
+            addAction(Intent.ACTION_BATTERY_CHANGED)
+            addAction(Intent.ACTION_TIME_CHANGED)
+            addAction(Intent.ACTION_TIMEZONE_CHANGED)
+        }
+        batteryReceiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context?, intent: Intent?) { updateHeader() }
-        }, filter)
+        }
+        registerReceiver(batteryReceiver, filter)
     }
 
     private fun showSettingsMenu() {

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@android:color/white"
     android:clipChildren="false"
     android:clipToPadding="false">
 
@@ -12,9 +12,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp"
-        android:background="#FFFFFF"
-        android:elevation="5dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="12dp"
+        android:paddingHorizontal="24dp"
+        android:background="@android:color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -24,24 +25,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000000"
-            android:textSize="48sp"
+            android:textSize="40sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvDateBattery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:textSize="16sp"
+            android:textColor="#333333"
+            android:textSize="15sp"
             android:textStyle="bold"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="4dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginTop="24dp">
+            android:layout_marginTop="20dp">
 
             <TextView
                 android:id="@+id/tvAllApps"
@@ -49,11 +50,12 @@
                 android:layout_height="wrap_content"
                 android:text="즐겨찾기"
                 android:textColor="#000000"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:textStyle="bold"
-                android:paddingHorizontal="16dp"
-                android:paddingVertical="8dp"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="7dp"
                 android:background="@drawable/bg_button_rounded"
+                android:backgroundTint="#F5F5F5"
                 android:clickable="true"
                 android:focusable="true"/>
 
@@ -64,10 +66,11 @@
 
             <ImageView
                 android:id="@+id/ivSettings"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
                 android:src="@drawable/ic_settings"
-                android:padding="8dp"
+                app:tint="#000000"
+                android:padding="7dp"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:focusable="true" />
@@ -107,6 +110,7 @@
             android:orientation="vertical"
             android:gravity="center"
             android:background="@drawable/bg_index_bar"
+            android:backgroundTint="#22FFFFFF"
             android:paddingVertical="12dp"
             android:clipChildren="false"
             android:clipToPadding="false"
