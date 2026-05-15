@@ -9,16 +9,21 @@ A minimalist, E-ink friendly Android launcher designed for Boox Palma, Leaf 3, L
 ## Features
 
 - **Minimalist Design**: Clean interface optimized for E-ink displays and tablets.
+- **E-ink Optimization**: High-contrast white theme, forced light mode, and removed shadows/animations for a ghosting-free experience.
 - **Dynamic Column Grid**: Choose between 1 to 5 columns for favorites (supports 4 to 20 apps) depending on your device's screen size.
-- **Niagara-style Index Bar**: "Wave" effect with intense pop-out and large bold fonts for easy navigation.
-- **Animation Toggle**: Option to disable wave animations for a ghosting-free experience on low refresh rate E-ink devices like Boox Leaf 3.
-- **Smart Indexing**: Only shows letters/consonants that have installed apps.
+- **Niagara-style Index Bar**: "Wave" effect with large bold fonts and high-contrast selection markers for easy navigation.
+- **Improved Accessibility**: Larger touch targets for buttons (48dp settings button).
 - **Korean Support**: Full support for Korean consonants (ㄱ, ㄴ, ㄷ...) in the index bar.
 - **Drag & Drop**: Long press items in the favorites view to reorder them.
-- **Z-Order Optimization**: Index bar always stays on top for best visibility.
 
 ## Versioning
 
+- **v1.4.0**: 
+    - Complete E-ink UI optimization (forced light mode, high-contrast white theme for all dialogs).
+    - Removed dialog shadows, frames, and animations to eliminate ghosting and black artifacts.
+    - Increased settings button touch target (48dp) for better usability.
+    - Refined index bar colors for maximum contrast.
+- **v1.3.9**: Initial internal test for settings button fixes.
 - **v1.3.7**: Fixed an issue where the scrolling app list overlapped with the top header in the "All Apps" view.
 - **v1.3.6**: Fully localized the UI and settings menu based on the selected date language (Korean, English, Japanese).
 - **v1.3.5**: Added a setting to choose the date language/format (Korean, English, Japanese).
@@ -35,7 +40,7 @@ A minimalist, E-ink friendly Android launcher designed for Boox Palma, Leaf 3, L
 ## Installation
 
 ```bash
-adb install e-ink-minimal-launcher-v1.3.7.apk
+adb install e-ink-minimal-launcher-v1.4.0.apk
 ```
 
 ## License

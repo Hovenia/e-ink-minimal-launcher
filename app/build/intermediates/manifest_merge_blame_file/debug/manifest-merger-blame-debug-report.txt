@@ -1,136 +1,162 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.palma.minimal.launcher"
-4    android:versionCode="1"
-5    android:versionName="1.0" >
+4    android:versionCode="15"
+5    android:versionName="1.4.0" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="26"
 9        android:targetSdkVersion="35" />
 10
 11    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
-11-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:4:5-77
-11-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:4:22-74
-12
-13    <permission
-13-->[androidx.core:core:1.12.0] /home/seo/.gradle/caches/transforms-3/8775ed491970576126584cf24be3fe11/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
-14        android:name="com.palma.minimal.launcher.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-14-->[androidx.core:core:1.12.0] /home/seo/.gradle/caches/transforms-3/8775ed491970576126584cf24be3fe11/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
-15        android:protectionLevel="signature" />
-15-->[androidx.core:core:1.12.0] /home/seo/.gradle/caches/transforms-3/8775ed491970576126584cf24be3fe11/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
-16
-17    <uses-permission android:name="com.palma.minimal.launcher.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-17-->[androidx.core:core:1.12.0] /home/seo/.gradle/caches/transforms-3/8775ed491970576126584cf24be3fe11/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
-17-->[androidx.core:core:1.12.0] /home/seo/.gradle/caches/transforms-3/8775ed491970576126584cf24be3fe11/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
-18
-19    <application
-19-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:6:5-25:19
-20        android:allowBackup="true"
-20-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:7:9-35
-21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-21-->[androidx.core:core:1.12.0] /home/seo/.gradle/caches/transforms-3/8775ed491970576126584cf24be3fe11/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
-22        android:debuggable="true"
-23        android:extractNativeLibs="false"
-24        android:icon="@mipmap/ic_launcher"
-24-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:8:9-43
-25        android:label="Minimal E-ink Launcher"
-25-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:9:9-47
-26        android:roundIcon="@mipmap/ic_launcher_round"
-26-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:10:9-54
-27        android:supportsRtl="true"
-27-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:11:9-35
-28        android:theme="@style/Theme.EinkLauncher" >
-28-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:12:9-50
-29        <activity
-29-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:14:9-24:20
-30            android:name="com.palma.minimal.launcher.MainActivity"
-30-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:15:13-41
-31            android:exported="true"
-31-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:16:13-36
-32            android:launchMode="singleTask"
-32-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:17:13-44
-33            android:stateNotNeeded="true" >
-33-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:18:13-42
-34            <intent-filter>
-34-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:19:13-23:29
-35                <action android:name="android.intent.action.MAIN" />
-35-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:20:17-69
-35-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:20:25-66
-36
-37                <category android:name="android.intent.category.HOME" />
-37-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:21:17-73
-37-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:21:27-70
-38                <category android:name="android.intent.category.DEFAULT" />
-38-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:22:17-76
-38-->/home/seo/palma-minimal-launcher/app/src/main/AndroidManifest.xml:22:27-73
-39            </intent-filter>
-40        </activity>
-41
-42        <provider
-42-->[androidx.emoji2:emoji2:1.2.0] /home/seo/.gradle/caches/transforms-3/fab8b75b7e9679982a94051180e1a35f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
-43            android:name="androidx.startup.InitializationProvider"
-43-->[androidx.emoji2:emoji2:1.2.0] /home/seo/.gradle/caches/transforms-3/fab8b75b7e9679982a94051180e1a35f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
-44            android:authorities="com.palma.minimal.launcher.androidx-startup"
-44-->[androidx.emoji2:emoji2:1.2.0] /home/seo/.gradle/caches/transforms-3/fab8b75b7e9679982a94051180e1a35f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
-45            android:exported="false" >
-45-->[androidx.emoji2:emoji2:1.2.0] /home/seo/.gradle/caches/transforms-3/fab8b75b7e9679982a94051180e1a35f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
-46            <meta-data
-46-->[androidx.emoji2:emoji2:1.2.0] /home/seo/.gradle/caches/transforms-3/fab8b75b7e9679982a94051180e1a35f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-47                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-47-->[androidx.emoji2:emoji2:1.2.0] /home/seo/.gradle/caches/transforms-3/fab8b75b7e9679982a94051180e1a35f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
-48                android:value="androidx.startup" />
-48-->[androidx.emoji2:emoji2:1.2.0] /home/seo/.gradle/caches/transforms-3/fab8b75b7e9679982a94051180e1a35f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
-49            <meta-data
-49-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/seo/.gradle/caches/transforms-3/2419007326b66f9827b3634ef3e657e6/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
-50                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-50-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/seo/.gradle/caches/transforms-3/2419007326b66f9827b3634ef3e657e6/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
-51                android:value="androidx.startup" />
-51-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/seo/.gradle/caches/transforms-3/2419007326b66f9827b3634ef3e657e6/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
-52            <meta-data
-52-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
-53                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-53-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
-54                android:value="androidx.startup" />
-54-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
-55        </provider>
-56
-57        <receiver
-57-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
-58            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-58-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
-59            android:directBootAware="false"
-59-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
-60            android:enabled="true"
-60-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
-61            android:exported="true"
-61-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
-62            android:permission="android.permission.DUMP" >
-62-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
-63            <intent-filter>
-63-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
-64                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-64-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
-64-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
-65            </intent-filter>
-66            <intent-filter>
-66-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
-67                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-67-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
-67-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
-68            </intent-filter>
-69            <intent-filter>
-69-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
-70                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-70-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
-70-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
-71            </intent-filter>
-72            <intent-filter>
-72-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
-73                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-73-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
-73-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/seo/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
-74            </intent-filter>
-75        </receiver>
-76    </application>
-77
-78</manifest>
+11-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:4:5-77
+11-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:4:22-74
+12    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+12-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:5:5-72
+12-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:5:22-69
+13
+14    <queries>
+14-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:7:5-12:15
+15        <intent>
+15-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:8:9-11:18
+16            <action android:name="android.intent.action.MAIN" />
+16-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:9:13-65
+16-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:9:21-62
+17
+18            <category android:name="android.intent.category.LAUNCHER" />
+18-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:10:13-73
+18-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:10:23-70
+19        </intent>
+20    </queries>
+21
+22    <permission
+22-->[androidx.core:core:1.12.0] C:\Users\SEO\.gradle\caches\transforms-3\8775ed491970576126584cf24be3fe11\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+23        android:name="com.palma.minimal.launcher.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+23-->[androidx.core:core:1.12.0] C:\Users\SEO\.gradle\caches\transforms-3\8775ed491970576126584cf24be3fe11\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+24        android:protectionLevel="signature" />
+24-->[androidx.core:core:1.12.0] C:\Users\SEO\.gradle\caches\transforms-3\8775ed491970576126584cf24be3fe11\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+25
+26    <uses-permission android:name="com.palma.minimal.launcher.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+26-->[androidx.core:core:1.12.0] C:\Users\SEO\.gradle\caches\transforms-3\8775ed491970576126584cf24be3fe11\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
+26-->[androidx.core:core:1.12.0] C:\Users\SEO\.gradle\caches\transforms-3\8775ed491970576126584cf24be3fe11\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+27
+28    <application
+28-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:14:5-37:19
+29        android:allowBackup="true"
+29-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:15:9-35
+30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+30-->[androidx.core:core:1.12.0] C:\Users\SEO\.gradle\caches\transforms-3\8775ed491970576126584cf24be3fe11\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+31        android:debuggable="true"
+32        android:extractNativeLibs="false"
+33        android:icon="@mipmap/ic_launcher"
+33-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:16:9-43
+34        android:label="Minimal E-ink Launcher"
+34-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:17:9-47
+35        android:roundIcon="@mipmap/ic_launcher_round"
+35-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:18:9-54
+36        android:supportsRtl="true"
+36-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:19:9-35
+37        android:theme="@style/Theme.EinkLauncher" >
+37-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:20:9-50
+38        <activity
+38-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:22:9-36:20
+39            android:name="com.palma.minimal.launcher.MainActivity"
+39-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:23:13-41
+40            android:clearTaskOnLaunch="true"
+40-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:26:13-45
+41            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode|density|layoutDirection"
+41-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:28:13-146
+42            android:exported="true"
+42-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:24:13-36
+43            android:launchMode="singleTask"
+43-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:25:13-44
+44            android:stateNotNeeded="true"
+44-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:29:13-42
+45            android:taskAffinity="" >
+45-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:27:13-36
+46            <intent-filter>
+46-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:30:13-35:29
+47                <action android:name="android.intent.action.MAIN" />
+47-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:9:13-65
+47-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:9:21-62
+48
+49                <category android:name="android.intent.category.HOME" />
+49-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:32:17-73
+49-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:32:27-70
+50                <category android:name="android.intent.category.DEFAULT" />
+50-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:33:17-76
+50-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:33:27-73
+51                <category android:name="android.intent.category.LAUNCHER" />
+51-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:10:13-73
+51-->C:\Users\SEO\e-ink-minimal-launcher\app\src\main\AndroidManifest.xml:10:23-70
+52            </intent-filter>
+53        </activity>
+54
+55        <provider
+55-->[androidx.emoji2:emoji2:1.2.0] C:\Users\SEO\.gradle\caches\transforms-3\fab8b75b7e9679982a94051180e1a35f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+56            android:name="androidx.startup.InitializationProvider"
+56-->[androidx.emoji2:emoji2:1.2.0] C:\Users\SEO\.gradle\caches\transforms-3\fab8b75b7e9679982a94051180e1a35f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+57            android:authorities="com.palma.minimal.launcher.androidx-startup"
+57-->[androidx.emoji2:emoji2:1.2.0] C:\Users\SEO\.gradle\caches\transforms-3\fab8b75b7e9679982a94051180e1a35f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+58            android:exported="false" >
+58-->[androidx.emoji2:emoji2:1.2.0] C:\Users\SEO\.gradle\caches\transforms-3\fab8b75b7e9679982a94051180e1a35f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+59            <meta-data
+59-->[androidx.emoji2:emoji2:1.2.0] C:\Users\SEO\.gradle\caches\transforms-3\fab8b75b7e9679982a94051180e1a35f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+60                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+60-->[androidx.emoji2:emoji2:1.2.0] C:\Users\SEO\.gradle\caches\transforms-3\fab8b75b7e9679982a94051180e1a35f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+61                android:value="androidx.startup" />
+61-->[androidx.emoji2:emoji2:1.2.0] C:\Users\SEO\.gradle\caches\transforms-3\fab8b75b7e9679982a94051180e1a35f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+62            <meta-data
+62-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\SEO\.gradle\caches\transforms-3\2419007326b66f9827b3634ef3e657e6\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+63                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+63-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\SEO\.gradle\caches\transforms-3\2419007326b66f9827b3634ef3e657e6\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+64                android:value="androidx.startup" />
+64-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\SEO\.gradle\caches\transforms-3\2419007326b66f9827b3634ef3e657e6\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+65            <meta-data
+65-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+66                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+66-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+67                android:value="androidx.startup" />
+67-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+68        </provider>
+69
+70        <receiver
+70-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+71            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+71-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+72            android:directBootAware="false"
+72-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+73            android:enabled="true"
+73-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+74            android:exported="true"
+74-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+75            android:permission="android.permission.DUMP" >
+75-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+76            <intent-filter>
+76-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+77                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+78            </intent-filter>
+79            <intent-filter>
+79-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+80                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+81            </intent-filter>
+82            <intent-filter>
+82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+83                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+84            </intent-filter>
+85            <intent-filter>
+85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+86                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\SEO\.gradle\caches\transforms-3\d652cbb5b9f56b84046055b1f667c7db\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+87            </intent-filter>
+88        </receiver>
+89    </application>
+90
+91</manifest>

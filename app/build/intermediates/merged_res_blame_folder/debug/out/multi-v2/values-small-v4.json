@@ -4,7 +4,7 @@
             "outputFile": "com.palma.minimal.launcher.app-mergeDebugResources-30:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "/home/seo/.gradle/caches/transforms-3/3d24542c92b20650ed0c8c895c803eaa/transformed/material-1.10.0/res/values-small-v4/values-small-v4.xml",
+                    "source": "C:\\Users\\SEO\\.gradle\\caches\\transforms-3\\3d24542c92b20650ed0c8c895c803eaa\\transformed\\material-1.10.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

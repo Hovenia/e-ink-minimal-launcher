@@ -24,6 +24,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.view.ContextThemeWrapper
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -77,6 +79,7 @@ class MainActivity : AppCompatActivity() {
     private val textCancel: String get() = when (dateLocale) { "EN" -> "Cancel"; "JA" -> "キャンセル"; else -> "취소" }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -170,7 +173,7 @@ class MainActivity : AppCompatActivity() {
                 textSize = 24f
                 setTypeface(null, Typeface.BOLD)
                 gravity = Gravity.CENTER
-                setTextColor(0xFF888888.toInt())
+                setTextColor(0xFF000000.toInt())
                 layoutParams = LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     0,
@@ -227,11 +230,15 @@ class MainActivity : AppCompatActivity() {
             }
             
             if (dist == 0) {
-                tv.setTextColor(0xFFFFFFFF.toInt())
+                tv.setTextColor(0xFF000000.toInt())
                 tv.textSize = 32f
+                tv.setTypeface(null, Typeface.BOLD)
+                tv.setBackgroundColor(0x22000000) // Very light grey circle/background effect
             } else {
-                tv.setTextColor(0xFF888888.toInt())
+                tv.setTextColor(0xFF000000.toInt())
                 tv.textSize = 24f
+                tv.setTypeface(null, Typeface.NORMAL)
+                tv.setBackgroundColor(0x00000000)
             }
         }
     }
@@ -240,8 +247,10 @@ class MainActivity : AppCompatActivity() {
         for (i in 0 until indexBarLayout.childCount) {
             val tv = indexBarLayout.getChildAt(i) as TextView
             tv.translationX = 0f
-            tv.setTextColor(0xFF888888.toInt())
+            tv.setTextColor(0xFF000000.toInt())
             tv.textSize = 24f
+            tv.setTypeface(null, Typeface.BOLD)
+            tv.setBackgroundColor(0x00000000)
         }
         currentSelectedIndex = -1
     }
@@ -397,6 +406,7 @@ class MainActivity : AppCompatActivity() {
         }
         ivSettings.setOnClickListener { showSettingsMenu() }
         btnRefreshScreen.setOnClickListener { 
+            Toast.makeText(this, "Refreshing Screen...", Toast.LENGTH_SHORT).show()
             // Onyx/Boox GC refresh broadcast
             sendBroadcast(Intent("android.intent.action.ONYX_GC_ANYWAY"))
             window.decorView.invalidate() 
@@ -414,12 +424,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showSettingsMenu() {
+        android.util.Log.d(TAG, "showSettingsMenu() called")
+        // Debug toast to verify click
+        val debugMsg = when (dateLocale) { "EN" -> "Opening Settings..."; "JA" -> "設定を開いています..."; else -> "설정을 여는 중..." }
+        Toast.makeText(this, debugMsg, Toast.LENGTH_SHORT).show()
+
         val options = when (dateLocale) {
             "EN" -> arrayOf("Grid Settings", "Animation Settings", "Language Settings", "App Info", "Default Launcher", "Uninstall Launcher", "Restart Launcher", "Privacy Policy", "Terms of Service", "GitHub")
             "JA" -> arrayOf("グリッド設定", "アニメーション設定", "言語設定", "アプリ情報", "デフォルトランチャー", "アンインストール", "再起動", "プライバシーポリシー", "利用規約", "GitHub")
             else -> arrayOf("즐겨찾기 배치 설정", "애니메이션 설정", "언어 설정", "앱 정보", "기본 런처 설정", "런처 삭제", "런처 재시작", "개인정보취급방침", "서비스이용약관", "GitHub 저장소")
         }
-        AlertDialog.Builder(this)
+        AlertDialog.Builder(ContextThemeWrapper(this, R.style.EinkAlertDialogTheme))
             .setTitle(textSettings)
             .setItems(options) { _, which ->
                 when (which) {
@@ -447,7 +462,7 @@ class MainActivity : AppCompatActivity() {
             "JA" -> 2
             else -> 0
         }
-        AlertDialog.Builder(this)
+        AlertDialog.Builder(ContextThemeWrapper(this, R.style.EinkAlertDialogTheme))
             .setTitle(title)
             .setSingleChoiceItems(options, checkedItem) { dialog, which ->
                 dateLocale = when (which) {
@@ -469,7 +484,7 @@ class MainActivity : AppCompatActivity() {
             "JA" -> arrayOf("1列 (最大4個)", "2列 (最大8個)", "3列 (最大12個)", "4列 (最大16個)", "5列 (最大20個)")
             else -> arrayOf("1단 (최대 4개)", "2단 (최대 8개)", "3단 (최대 12개)", "4단 (최대 16개)", "5단 (최대 20개)")
         }
-        AlertDialog.Builder(this)
+        AlertDialog.Builder(ContextThemeWrapper(this, R.style.EinkAlertDialogTheme))
             .setTitle(title)
             .setSingleChoiceItems(cols, favColumns - 1) { dialog, which ->
                 favColumns = which + 1
@@ -488,7 +503,7 @@ class MainActivity : AppCompatActivity() {
             else -> arrayOf("애니메이션 끄기 (기본/저사양 권장)", "애니메이션 켜기 (고성능/Y700 권장)")
         }
         val checkedItem = if (!isAnimationEnabled) 0 else 1
-        AlertDialog.Builder(this)
+        AlertDialog.Builder(ContextThemeWrapper(this, R.style.EinkAlertDialogTheme))
             .setTitle(title)
             .setSingleChoiceItems(options, checkedItem) { dialog, which ->
                 isAnimationEnabled = (which == 1)

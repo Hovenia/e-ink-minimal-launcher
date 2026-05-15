@@ -1,8 +1,17 @@
 R_DEF: Internal format may change without notice
 local
+drawable bg_button_rounded
+drawable bg_index_bar
+drawable bg_white
+drawable ic_launcher_foreground
+drawable ic_settings
 id btnRefreshScreen
+id btnRemove
 id headerLayout
+id indexBarContainer
 id indexBarLayout
+id ivAppIcon
+id ivSettings
 id recyclerViewApps
 id tvAllApps
 id tvAppName
@@ -10,6 +19,9 @@ id tvDateBattery
 id tvTime
 layout activity_main
 layout item_app
+layout item_app_grid
+layout item_app_list
 mipmap ic_launcher
 mipmap ic_launcher_round
+style EinkAlertDialogTheme
 style Theme.EinkLauncher

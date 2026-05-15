@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "com.palma.minimal.launcher.app-merged_res-32:/layout_item_app_grid.xml.flat",
+        "source": "com.palma.minimal.launcher.app-main-33:/layout/item_app_grid.xml"
+    },
+    {
+        "merged": "com.palma.minimal.launcher.app-merged_res-32:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.palma.minimal.launcher.app-main-33:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.palma.minimal.launcher.app-merged_res-32:/drawable_bg_index_bar.xml.flat",
+        "source": "com.palma.minimal.launcher.app-main-33:/drawable/bg_index_bar.xml"
+    },
+    {
+        "merged": "com.palma.minimal.launcher.app-merged_res-32:/drawable_bg_button_rounded.xml.flat",
+        "source": "com.palma.minimal.launcher.app-main-33:/drawable/bg_button_rounded.xml"
+    },
+    {
+        "merged": "com.palma.minimal.launcher.app-merged_res-32:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.palma.minimal.launcher.app-main-33:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.palma.minimal.launcher.app-merged_res-32:/layout_item_app.xml.flat",
+        "source": "com.palma.minimal.launcher.app-main-33:/layout/item_app.xml"
+    },
+    {
+        "merged": "com.palma.minimal.launcher.app-merged_res-32:/layout_activity_main.xml.flat",
+        "source": "com.palma.minimal.launcher.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.palma.minimal.launcher.app-merged_res-32:/drawable_ic_settings.xml.flat",
+        "source": "com.palma.minimal.launcher.app-main-33:/drawable/ic_settings.xml"
+    },
+    {
+        "merged": "com.palma.minimal.launcher.app-merged_res-32:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.palma.minimal.launcher.app-main-33:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.palma.minimal.launcher.app-merged_res-32:/layout_item_app_list.xml.flat",
+        "source": "com.palma.minimal.launcher.app-main-33:/layout/item_app_list.xml"
+    }
+]
