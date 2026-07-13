@@ -1,23 +1,28 @@
 # E-ink Minimal Launcher
 
-A minimalist, E-ink friendly Android launcher designed for Boox Palma, Leaf 3, Lenovo Y700, and similar devices.
+本次版本在原项目基础上进行了本地化与墨水屏体验优化，更新内容如下：
+### 核心功能优化
+* **全面汉化**：完成应用界面中文翻译。
+* **墨水屏专属优化**：提升图标在墨水屏上的对比度与清晰度。
+
+### 界面与排版
+* **布局调整**：优化默认图标排版，提升桌面视觉整洁度。
+
+### 个性化定制
+* **字体与图标**：新增对自定义字体及第三方图标包的支持。
+* **尺寸调节**：支持自由设定图标大小与文字大小。
 
 <p align="center">
   <img src="assets/photo.jpg" width="400" alt="Launcher on Device" />
 </p>
 
-## Features
-
-- **Minimalist Design**: Clean interface optimized for E-ink displays and tablets.
-- **E-ink Optimization**: High-contrast white theme, forced light mode, and removed shadows/animations for a ghosting-free experience.
-- **Dynamic Column Grid**: Choose between 1 to 5 columns for favorites (supports 4 to 20 apps) depending on your device's screen size.
-- **Niagara-style Index Bar**: "Wave" effect with large bold fonts and high-contrast selection markers for easy navigation.
-- **Improved Accessibility**: Larger touch targets for buttons (48dp settings button).
-- **Korean Support**: Full support for Korean consonants (ㄱ, ㄴ, ㄷ...) in the index bar.
-- **Drag & Drop**: Long press items in the favorites view to reorder them.
 
 ## Versioning
-
+- **v1.4.0 中文优化版**：
+    - 全面汉化：完成应用界面中文翻译。
+    - 界面与排版：调整默认图标排版，提升视觉整洁度。
+    - 个性化定制：新增自定义字体、第三方图标包支持，支持自由设定图标与文字大小。
+    - 墨水屏增强：提升图标在墨水屏上的对比度与清晰度。
 - **v1.4.0**: 
     - Complete E-ink UI optimization (forced light mode, high-contrast white theme for all dialogs).
     - Removed dialog shadows, frames, and animations to eliminate ghosting and black artifacts.
