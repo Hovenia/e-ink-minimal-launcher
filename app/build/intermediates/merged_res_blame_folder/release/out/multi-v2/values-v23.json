@@ -4,7 +4,7 @@
             "outputFile": "com.palma.minimal.launcher.app-mergeReleaseResources-30:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\SEO\\.gradle\\caches\\transforms-3\\1e2f861312ad42faf7384aadd6209d49\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Cpipi\\.gradle\\caches\\transforms-3\\1e2f861312ad42faf7384aadd6209d49\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\SEO\\.gradle\\caches\\transforms-3\\3d24542c92b20650ed0c8c895c803eaa\\transformed\\material-1.10.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Cpipi\\.gradle\\caches\\transforms-3\\3d24542c92b20650ed0c8c895c803eaa\\transformed\\material-1.10.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,5,9,13,16,21,25,28,31,34,39,42,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -34,7 +34,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\SEO\\.gradle\\caches\\transforms-3\\22e26384dd04e6d50684989214aa0c1b\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Cpipi\\.gradle\\caches\\transforms-3\\22e26384dd04e6d50684989214aa0c1b\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

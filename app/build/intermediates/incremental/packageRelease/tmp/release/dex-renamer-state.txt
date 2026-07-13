@@ -1,4 +1,4 @@
-#Mon May 11 13:05:52 KST 2026
-base.0=C\:\\Users\\SEO\\e-ink-minimal-launcher\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+#Mon Jul 13 02:29:36 CST 2026
+base.0=C\:\\Users\\Cpipi\\Desktop\\e-ink-minimal-launcher-main\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

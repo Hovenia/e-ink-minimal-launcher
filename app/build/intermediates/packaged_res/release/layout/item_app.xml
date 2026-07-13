@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="8dp"
-    android:background="?android:attr/selectableItemBackground"
+    android:background="@drawable/bg_eink_selector"
     android:clickable="true"
     android:focusable="true">
 
@@ -35,15 +35,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
+    <!-- 移除了带透明度的背景，改为纯黑底白字 -->
     <TextView
         android:id="@+id/btnRemove"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:text="×"
         android:textSize="24sp"
-        android:textColor="#FF0000"
+        android:textColor="#FFFFFF"
         android:gravity="center"
-        android:background="#40000000"
+        android:background="#000000"
         android:visibility="gone"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

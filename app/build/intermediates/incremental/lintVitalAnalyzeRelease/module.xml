@@ -1,12 +1,12 @@
 <lint-module
     format="1"
-    dir="C:\Users\SEO\e-ink-minimal-launcher\app"
+    dir="C:\Users\Cpipi\Desktop\e-ink-minimal-launcher-main\app"
     name=":app"
     type="APP"
     maven="e-ink-minimal-launcher:app:"
     agpVersion="8.2.0"
     buildFolder="build"
-    bootClassPath="C:\Users\SEO\AppData\Local\Android\Sdk\platforms\android-35\android.jar;C:\Users\SEO\AppData\Local\Android\Sdk\build-tools\34.0.0\core-lambda-stubs.jar"
+    bootClassPath="C:\Users\Cpipi\AppData\Local\Android\Sdk\platforms\android-35\android.jar;C:\Users\Cpipi\AppData\Local\Android\Sdk\build-tools\34.0.0\core-lambda-stubs.jar"
     javaSourceLevel="11"
     compileTarget="android-35"
     neverShrinking="true">

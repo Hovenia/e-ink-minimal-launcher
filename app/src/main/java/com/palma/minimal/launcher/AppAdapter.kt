@@ -1,16 +1,18 @@
 package com.palma.minimal.launcher
 
+import android.graphics.Typeface
 import android.graphics.drawable.Drawable
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import java.util.*
+import java.util.Collections
 
 data class AppInfo(
-    val name: String, 
+    val name: String,
     val packageName: String,
     val className: String,
     val icon: Drawable? = null
@@ -29,7 +31,12 @@ class AppAdapter(
     }
 
     private var isFavoritesView = true
-    private var itemHeight: Int = 0
+    private var favIconSizePx: Int = 150
+    private var allIconSizePx: Int = 120
+    private var favTextSizeSp: Float = 14f
+    private var allTextSizeSp: Float = 16f
+    private var hideAppNames: Boolean = false
+    private var customTypeface: Typeface? = null
 
     fun updateData(newApps: List<AppInfo>, isFavorites: Boolean) {
         apps = newApps.toMutableList()
@@ -37,11 +44,22 @@ class AppAdapter(
         notifyDataSetChanged()
     }
 
-    fun setItemHeight(height: Int) {
-        if (this.itemHeight != height) {
-            this.itemHeight = height
-            notifyDataSetChanged()
-        }
+    @Suppress("UNUSED_PARAMETER")
+    fun setSizesAndFont(
+        favIconPx: Int,
+        allIconPx: Int,
+        favTextSp: Float,
+        allTextSp: Float,
+        hideNames: Boolean,
+        typeface: Typeface?
+    ) {
+        this.favIconSizePx = favIconPx
+        this.allIconSizePx = allIconPx
+        this.favTextSizeSp = favTextSp
+        this.allTextSizeSp = allTextSp
+        this.hideAppNames = hideNames
+        this.customTypeface = typeface
+        notifyDataSetChanged()
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -71,12 +89,53 @@ class AppAdapter(
     override fun onBindViewHolder(holder: AppViewHolder, position: Int) {
         val app = apps[position]
         holder.tvAppName.text = app.name
+        holder.itemView.background = null
+
+        val isGrid = isFavoritesView
+        val targetIconSize = if (isGrid) favIconSizePx else allIconSizePx
+
+        holder.ivAppIcon.setImageDrawable(null)
+        holder.ivAppIcon.layoutParams.width = targetIconSize
+        holder.ivAppIcon.layoutParams.height = targetIconSize
+        holder.ivAppIcon.requestLayout()
         holder.ivAppIcon.setImageDrawable(app.icon)
 
-        if (isFavoritesView && itemHeight > 0) {
-            holder.itemView.layoutParams.height = itemHeight
+        holder.tvAppName.textSize = if (isGrid) favTextSizeSp else allTextSizeSp
+        holder.tvAppName.visibility = if (hideAppNames) View.GONE else View.VISIBLE
+        holder.tvAppName.maxLines = 2
+        holder.tvAppName.ellipsize = TextUtils.TruncateAt.END
+
+        if (customTypeface != null) {
+            holder.tvAppName.typeface = customTypeface
         } else {
-            holder.itemView.layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
+            holder.tvAppName.setTypeface(null, Typeface.BOLD)
+        }
+
+        val density = holder.itemView.context.resources.displayMetrics.density
+
+        if (isGrid) {
+            val pad = (12 * density).toInt()
+            holder.itemView.setPadding(pad, pad, pad, pad)
+
+            val currentTextSp = favTextSizeSp
+            val lineHeight = (currentTextSp * density * 1.4f).toInt()
+            val textAreaHeight = if (hideAppNames) 0 else lineHeight * 2
+            holder.tvAppName.layoutParams.height = textAreaHeight
+
+            holder.itemView.layoutParams = RecyclerView.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                targetIconSize + textAreaHeight + pad * 2
+            )
+        } else {
+            val padH = (16 * density).toInt()
+            val padV = (12 * density).toInt()
+            holder.itemView.setPadding(padH, padV, padH, padV)
+            holder.itemView.layoutParams = RecyclerView.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+            holder.tvAppName.layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
+            holder.tvAppName.maxLines = 1
         }
 
         holder.itemView.setOnClickListener { onClick(app) }

@@ -3,57 +3,61 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
-    android:clipChildren="false"
-    android:clipToPadding="false">
+    android:background="@android:color/white"
+    android:clipChildren="true"
+    android:clipToPadding="true">
 
     <LinearLayout
         android:id="@+id/headerLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp"
-        android:background="@android:color/transparent"
+        android:paddingTop="20dp"
+        android:paddingBottom="12dp"
+        android:paddingHorizontal="24dp"
+        android:background="@android:color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
             android:id="@+id/tvTime"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
-            android:textSize="48sp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="40sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvDateBattery"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#EEEEEE"
-            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="15sp"
             android:textStyle="bold"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="4dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginTop="24dp">
+            android:layout_marginTop="20dp">
 
             <TextView
                 android:id="@+id/tvAllApps"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="즐겨찾기"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
+                android:text="收藏"
+                android:textColor="#000000"
+                android:textSize="17sp"
                 android:textStyle="bold"
-                android:paddingHorizontal="16dp"
-                android:paddingVertical="8dp"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="7dp"
                 android:background="@drawable/bg_button_rounded"
-                android:backgroundTint="#33FFFFFF"
+                android:backgroundTint="#FFFFFF"
                 android:clickable="true"
                 android:focusable="true"/>
 
@@ -62,14 +66,18 @@
                 android:layout_height="0dp"
                 android:layout_weight="1" />
 
-            <ImageView
-                android:id="@+id/ivSettings"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_settings"
-                app:tint="#FFFFFF"
-                android:padding="8dp"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
+            <TextView
+                android:id="@+id/tvSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设置"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="7dp"
+                android:background="@drawable/bg_button_rounded"
+                android:backgroundTint="#FFFFFF"
                 android:clickable="true"
                 android:focusable="true" />
         </LinearLayout>
@@ -86,7 +94,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Moved indexBarContainer to be the last child and increased elevation -->
+    <ScrollView
+        android:id="@+id/layoutSettings"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:overScrollMode="never"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/settingsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="24dp" />
+
+    </ScrollView>
+
     <FrameLayout
         android:id="@+id/indexBarContainer"
         android:layout_width="60dp"
@@ -108,12 +138,11 @@
             android:orientation="vertical"
             android:gravity="center"
             android:background="@drawable/bg_index_bar"
-            android:backgroundTint="#22FFFFFF"
+            android:backgroundTint="#FFFFFF"
             android:paddingVertical="12dp"
             android:clipChildren="false"
             android:clipToPadding="false"
-            android:elevation="11dp">
-        </LinearLayout>
+            android:elevation="11dp" />
     </FrameLayout>
 
     <View

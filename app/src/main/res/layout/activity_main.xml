@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:clipChildren="false"
-    android:clipToPadding="false">
+    android:clipChildren="true"
+    android:clipToPadding="true">
 
     <LinearLayout
         android:id="@+id/headerLayout"
@@ -22,17 +22,19 @@
 
         <TextView
             android:id="@+id/tvTime"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:textColor="#000000"
             android:textSize="40sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvDateBattery"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#333333"
+            android:gravity="center"
+            android:textColor="#000000"
             android:textSize="15sp"
             android:textStyle="bold"
             android:layout_marginTop="4dp" />
@@ -48,7 +50,7 @@
                 android:id="@+id/tvAllApps"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="즐겨찾기"
+                android:text="收藏"
                 android:textColor="#000000"
                 android:textSize="17sp"
                 android:textStyle="bold"
@@ -64,14 +66,18 @@
                 android:layout_height="0dp"
                 android:layout_weight="1" />
 
-            <ImageView
-                android:id="@+id/ivSettings"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/ic_settings"
-                app:tint="#000000"
-                android:padding="10dp"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
+            <TextView
+                android:id="@+id/tvSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设置"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="7dp"
+                android:background="@drawable/bg_button_rounded"
+                android:backgroundTint="#FFFFFF"
                 android:clickable="true"
                 android:focusable="true" />
         </LinearLayout>
@@ -88,7 +94,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Moved indexBarContainer to be the last child and increased elevation -->
+    <ScrollView
+        android:id="@+id/layoutSettings"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:overScrollMode="never"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/settingsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="24dp" />
+
+    </ScrollView>
+
     <FrameLayout
         android:id="@+id/indexBarContainer"
         android:layout_width="60dp"
@@ -114,8 +142,7 @@
             android:paddingVertical="12dp"
             android:clipChildren="false"
             android:clipToPadding="false"
-            android:elevation="11dp">
-        </LinearLayout>
+            android:elevation="11dp" />
     </FrameLayout>
 
     <View

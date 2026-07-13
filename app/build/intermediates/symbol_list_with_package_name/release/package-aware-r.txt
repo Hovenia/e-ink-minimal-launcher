@@ -2940,7 +2940,10 @@ drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
 drawable bg_button_rounded
+drawable bg_dialog_eink
+drawable bg_eink_selector
 drawable bg_index_bar
+drawable bg_white
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3285,11 +3288,11 @@ id is_pooling_container_tag
 id italic
 id item_touch_helper_previous_elevation
 id ivAppIcon
-id ivSettings
 id jumpToEnd
 id jumpToStart
 id labeled
 id layout
+id layoutSettings
 id left
 id leftToRight
 id legacy
@@ -3449,6 +3452,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id settingsContainer
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3536,6 +3540,7 @@ id triangle
 id tvAllApps
 id tvAppName
 id tvDateBattery
+id tvSettings
 id tvTime
 id unchecked
 id uniform
@@ -4216,6 +4221,7 @@ style Base_Widget_MaterialComponents_TextView
 style CardView
 style CardView_Dark
 style CardView_Light
+style EinkAlertDialogTheme
 style MaterialAlertDialog_Material3
 style MaterialAlertDialog_Material3_Animation
 style MaterialAlertDialog_Material3_Body_Text
@@ -5195,3 +5201,4 @@ styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration ifTagNotSet ifTagSet motionInterpolator motionTarget onStateTransition pathMotionArc setsTag transitionDisable upDuration viewTransitionMode
 styleable include constraintSet
+xml device_admin

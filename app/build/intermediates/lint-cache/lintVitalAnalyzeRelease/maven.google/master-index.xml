@@ -47,6 +47,7 @@
   <androidx.contentpager/>
   <androidx.coordinatorlayout/>
   <androidx.core/>
+  <androidx.core.locationbutton/>
   <androidx.core.uwb/>
   <androidx.credentials/>
   <androidx.credentials.providerevents/>
@@ -210,6 +211,7 @@
   <com.android.tools/>
   <com.android.tools.adblib/>
   <com.android.tools.analytics-library/>
+  <com.android.tools.androidtest/>
   <com.android.tools.apkdeployer/>
   <com.android.tools.apkparser/>
   <com.android.tools.build/>
@@ -273,6 +275,7 @@
   <com.google.android.libraries.play.games/>
   <com.google.android.libraries.sdkcoroutines/>
   <com.google.android.libraries.searchinapps/>
+  <com.google.android.libraries.verifier/>
   <com.google.android.livesharing/>
   <com.google.android.material/>
   <com.google.android.mdoc/>
