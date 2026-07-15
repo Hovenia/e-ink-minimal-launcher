@@ -161,6 +161,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         super.onCreate(savedInstanceState)
+        // ===== 新增代码：强制导航栏和状态栏为白底黑字 =====
+        window.navigationBarColor = android.graphics.Color.WHITE // 设置导航栏背景为纯白
+        window.statusBarColor = android.graphics.Color.WHITE     // 设置状态栏背景为纯白（可选）
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            // 告诉系统：我的背景是亮的，请把导航栏和状态栏的图标/按键变成黑色
+            window.decorView.systemUiVisibility = window.decorView.systemUiVisibility or
+                    android.view.View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR or
+                    android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        }
+        // ===============================================
 
         prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         isStatusBarHidden = prefs.getBoolean(KEY_HIDE_STATUS_BAR, false)
@@ -778,21 +789,30 @@ class MainActivity : AppCompatActivity() {
         else allAppsList.forEach { if (getInitialLetter(it.name)==label) filteredAppsList.add(it) }
         appAdapter.updateData(filteredAppsList, false)
     }
-
     private fun getInitialLetter(name: String): String {
         val t = name.trim(); if (t.isEmpty()) return "#"; val c = t[0]
-        if (c.isLetter()) return c.uppercaseChar().toString()
+
+        // ===== 核心修复：只放行纯英文字母，汉字必须去走下面的拼音逻辑 =====
+        if (c in 'a'..'z' || c in 'A'..'Z') return c.uppercaseChar().toString()
+        // =========================================================
+
         if (isKorean(c)) {
             if (c.code in 0xAC00..0xD7A3) return arrayOf("ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ")[(c.code-0xAC00)/28/21]
             if (isKoreanConsonant(c)) return c.toString()
         }
+
+        // 中文拼音分段比对逻辑（微信、冰箱、支付宝等都会走到这里）
         if (c.toString().matches(Regex("[\\u4e00-\\u9fa5]"))) {
             val s = c.toString()
-            for (i in 0 until pinyinBoundaries.size-1) { if (chinaCollator.compare(s, pinyinBoundaries[i])>=0 && chinaCollator.compare(s, pinyinBoundaries[i+1])<0) return pinyinLetters[i] }
+            for (i in 0 until pinyinBoundaries.size-1) {
+                if (chinaCollator.compare(s, pinyinBoundaries[i])>=0 && chinaCollator.compare(s, pinyinBoundaries[i+1])<0) return pinyinLetters[i]
+            }
             if (chinaCollator.compare(s, pinyinBoundaries.last())>=0) return "Z"
         }
+
         return "#"
     }
+
 
     private fun isKorean(c: Char): Boolean = c.code in 0xAC00..0xD7A3 || c.code in 0x3131..0x318E
     private fun isKoreanConsonant(c: Char): Boolean = c.code in 0x3131..0x314E
